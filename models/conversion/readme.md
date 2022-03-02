@@ -10,9 +10,23 @@
 ```
 export MODEL=efficientnet-b0
 wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/${MODEL}.tar.gz
+
 tar zxf ${MODEL}.tar.gz
+
+wget https://upload.wikimedia.org/wikipedia/commons/f/fe/Giant_Panda_in_Beijing_Zoo_1.JPG -O panda.jpg
+wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/eval_data/labels_map.txt
+
+python eval_ckpt_main.py --model_name=$MODEL --ckpt_dir=$MODEL --example_img=panda.jpg --labels_map_file=labels_map.txt
 ```
 
+
+Please refer to the following colab for more instructions on how to obtain and use those checkpoints.
+
+  * [`eval_ckpt_example.ipynb`](eval_ckpt_example.ipynb): A colab example to load
+ EfficientNet pretrained checkpoints files and use the restored model to classify images.
+
+
+#     
 2. Run `convert.py`
 
 ```
@@ -34,8 +48,6 @@ optional arguments:
 Example
 ```
 python3 convert.py --model efficientnet-b0 --tf efficientnet-b0 --pth b0
-
-
 
 # if custom model
 python3 convert_custom.py --model efficientnet-b0 --tf efficientnet-b0 --pth b0
