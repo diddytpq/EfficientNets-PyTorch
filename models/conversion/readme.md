@@ -34,4 +34,9 @@ optional arguments:
 Example
 ```
 python3 convert.py --model efficientnet-b0 --tf efficientnet-b0 --pth b0
+
+
+
+# if custom model
+python3 convert_custom.py --model efficientnet-b0 --tf efficientnet-b0 --pth b0
 ```

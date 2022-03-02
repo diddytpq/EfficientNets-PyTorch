@@ -1,6 +1,6 @@
-conversion/*.pth
-conversion/*.tar.gz
-conversion/efficientnet-b*
+models/conversion/*.pth
+models/conversion/*.tar.gz
+models/conversion/efficientnet-b*
 
 data
 data/*
